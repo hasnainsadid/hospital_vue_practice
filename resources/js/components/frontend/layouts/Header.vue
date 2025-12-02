@@ -73,7 +73,3 @@ const isActive = (url) => {
     return page.url == url;
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
