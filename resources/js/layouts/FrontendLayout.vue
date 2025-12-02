@@ -45,23 +45,44 @@ import { onMounted } from 'vue'
 import Header from '@/components/frontend/layouts/Header.vue'
 import Footer from '@/components/frontend/layouts/Footer.vue'
 
-onMounted(() => {
-    const scripts = [
-        "https://code.jquery.com/jquery-3.4.1.min.js",
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js",
-        "frontend/lib/easing/easing.min.js",
-        "frontend/lib/waypoints/waypoints.min.js",
-        "frontend/lib/owlcarousel/owl.carousel.min.js",
-        "frontend/lib/tempusdominus/js/moment.min.js",
-        "frontend/lib/tempusdominus/js/moment-timezone.min.js",
-        "frontend/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js",
-        "frontend/js/main.js"
-    ];
-    scripts.forEach(src => {
-        const script = document.createElement('script')
-        script.src = src
-        script.defer = true
-        document.body.appendChild(script)
+// onMounted(() => {
+//     const scripts = [
+//         "https://code.jquery.com/jquery-3.4.1.min.js",
+//         "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js",
+//         "frontend/lib/easing/easing.min.js",
+//         "frontend/lib/waypoints/waypoints.min.js",
+//         "frontend/lib/owlcarousel/owl.carousel.min.js",
+//         "frontend/lib/tempusdominus/js/moment.min.js",
+//         "frontend/lib/tempusdominus/js/moment-timezone.min.js",
+//         "frontend/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js",
+//         "frontend/js/main.js"
+//     ];
+//     scripts.forEach(src => {
+//         const script = document.createElement('script')
+//         script.src = src
+//         script.defer = true
+//         document.body.appendChild(script)
+//     })
+// })
+
+// Load JS files
+const loadScript = (src) => {
+    return new Promise((resolve) => {
+        const s = document.createElement('script')
+        s.src = src
+        s.async = false
+        s.onload = resolve
+        document.body.appendChild(s)
     })
+}
+
+onMounted(async () => {
+    await loadScript("frontend/lib/easing/easing.min.js")
+    await loadScript("frontend/lib/waypoints/waypoints.min.js")
+    await loadScript("frontend/lib/owlcarousel/owl.carousel.min.js")
+    await loadScript("frontend/lib/tempusdominus/js/moment.min.js")
+    await loadScript("frontend/lib/tempusdominus/js/moment-timezone.min.js")
+    await loadScript("frontend/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js")
+    await loadScript("frontend/js/main.js")
 })
 </script>
