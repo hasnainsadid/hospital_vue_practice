@@ -12,9 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries -->
-        <!-- <link href="frontend/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css"
-            rel="stylesheet">
+        <link href="frontend/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="frontend/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
         <!-- Bootstrap -->
@@ -38,7 +36,7 @@
         <i class="bi bi-arrow-up"></i>
     </a>
 
-
+    
 </template>
 
 <script setup>
@@ -84,7 +82,7 @@ onMounted(async () => {
     await loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js")
     // await loadScript("/frontend/lib/easing/easing.min.js")
     await loadScript("/frontend/lib/waypoints/waypoints.min.js")
-    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js")
+    await loadScript("/frontend/lib/owlcarousel/owl.carousel.min.js")
     await loadScript("/frontend/lib/tempusdominus/js/moment.min.js")
     await loadScript("/frontend/lib/tempusdominus/js/moment-timezone.min.js")
     await loadScript("/frontend/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js")
